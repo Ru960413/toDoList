@@ -14,7 +14,6 @@ Django==4.1.1
 django-cors-headers==3.13.0
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
-djlint==1.12.1
 EditorConfig==0.12.3
 filelock==3.8.0
 fonttools==4.37.4
@@ -31,7 +30,6 @@ itsdangerous==2.1.2
 jellyfish==0.9.0
 Jinja2==3.1.2
 jsbeautifier==1.14.6
-lib50==3.0.4
 MarkupSafe==2.1.1
 packaging==21.3
 pathspec==0.9.0
