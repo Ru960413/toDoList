@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-_z-&x!=2ca@n^u5c6@hblr_+y^a5q$mgvbi64_-%()cbh(dmsa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['todolist-production-2fac.up.railway.app', '127.0.0.1']
 
 
 # Application definition
@@ -160,6 +160,9 @@ USE_TZ = True
 
 TIME_ZONE = 'Asia/Taipei'
 
+CSRF_TRUSTED_ORIGINS = [
+    'todolist-production-2fac.up.railway.app',
+]
 
 # allow Django to send email to user(using TLS port)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
