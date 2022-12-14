@@ -1,0 +1,56 @@
+<!--to do app home page: once the users login to their account, show all the toDos -->
+
+{% extends 'task/main.html' %}
+{% load static %}
+
+{% block content %}
+<!--Pending: categorize the to do list according to category DONE-->
+    <div class="greet_search">
+        <h3 class="title">My To Do List</h3>
+        
+        <!--<form class="search" action="{% url '' %}"method="get">
+            <input class="search-box" type="text" name="search_query" value= "{{ search_query }}" placeholder="Search for task ..."/>
+            <button class="search-submit" type="submit">Search</button>
+        </form>-->
+        <br/>
+
+        <div class="add_task">
+            <a class="btn" href="{% url 'create-task' %}">Add Task</a>
+        </div>
+    </div>
+
+<br/>
+
+    <div class="task-wrapper">
+        
+        
+        {% for task in tasks %}
+            
+            
+            <div class="task-list">
+                {% if task.complete %}
+                <div class="task-complete-icon"></div>
+                <div class="list-row title"><s><a href="{% url 'update-task' task.id %}">{{ task.task_name }}</a></s></div>
+                
+                {% else %}
+                <div class="task-incomplete-icon"></div>
+                <div class="list-row title"><a href="{% url 'update-task' task.id %}">{{ task.task_name }}</a></div>
+                
+                {% endif %}
+                <div class="list-row">({{ task.category }})</div>
+                <!--<div class="list-row update"><button><a href="{% url 'update-task' task.id %}">Edit</a></button></div>-->
+                <div class="list-row delete"><a href="{% url 'delete-task' task.id %}">&#10006;</a></div>
+            </div>
+
+
+        {% empty %}
+        <p class="task-list">You don't have any task item</p>
+        {% endfor %}
+        
+
+
+        
+
+
+    </div>
+{% endblock content %}

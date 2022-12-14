@@ -1,0 +1,30 @@
+{% extends 'task/main.html' %}
+
+{% load static %}
+{% block content %}
+
+
+      
+	<div class="navbar">
+		<a href="{% url '' %}" style="color: #fff; text-decoration: none;">&#8592;Back</a>
+	</div>
+	<br />
+	
+	<form method="POST" class="update-form" action="">
+		<h3>Update Task</h3>
+		{% csrf_token %}
+
+		{% for field in form %}
+					<div class="form__field">
+						<label>{{field.label}}</label>
+						{{field}}
+					</div>
+
+		{% endfor %}
+		<input class="btn" type="submit" name="Update Task" value="Update">
+		
+		
+	</form>
+</div>
+
+{% endblock content %}

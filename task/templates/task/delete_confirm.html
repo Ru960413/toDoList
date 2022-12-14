@@ -1,0 +1,18 @@
+<!--Ask user to confirm task deletion-->
+{% extends 'task/main.html' %}
+
+{% load static %}
+{% block content %}
+<div class="navbar">
+    <a href="{% url '' %}" style="color: #fff; text-decoration: none;">&#8592;Back</a>
+</div>
+
+	<br />
+
+<form method="POST" class="delete-form" action="">
+    <p>Are you sure you want to delete "{{task.task_name}}"?</p>
+    {% csrf_token %}
+    <input  class="btn" type="submit" name="Delete Task" value="Confirm">
+
+</form>
+{% endblock content %}

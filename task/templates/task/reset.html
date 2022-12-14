@@ -1,0 +1,24 @@
+{% extends 'task/main.html' %}
+{% block content %}
+
+
+  <div class="password-reset-wrapper">
+    <div>
+      <h3>Enter Password</h3>
+      <p>Please enter your new password twice so we can verify you typed it in correctly.</p>
+      <br />
+
+      <form class="form" method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          
+      
+        <input class="reset-btn"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  </div>
+
+{% endblock content %}

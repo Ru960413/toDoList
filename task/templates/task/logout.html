@@ -1,0 +1,12 @@
+{% extends 'task/main.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="logout-text-wrapper">
+<!--This page will be delete later and redirect user to login-register form instead-->
+    <p>You have logged out successfully!</p>
+    <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a> to continue.</p>
+</div>
+
+{% endblock content %}

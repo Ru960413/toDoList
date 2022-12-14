@@ -1,0 +1,30 @@
+{% load static %}
+
+<!--# BUG add logic to render different navbar when user is on different page: DONE-->
+{% if page == 'create' or page == 'update' or page == 'delete'%}
+
+{% else %}
+<div class="navbar">
+    {% if user.is_authenticated %}
+    <h2 class="greeting">Hello, {{user.first_name}}!</h2>
+
+    {% elif page == "logout" %}
+    <h2 class="greeting">Bye!</h2>
+    
+    {% endif %}
+    
+    <ul class="navbar-links">
+
+        {% if page == 'home' %}
+        <li class="nav-item"><a href="{% url 'logout' %}">Log Out</a></li>
+        
+        {% elif page == 'register' or page == 'login' %}
+
+        {% else %}
+        <li class="nav-item"><a href="{% url 'login' %}">Log In</a></li>
+
+        {% endif %}
+    </ul>
+    
+</div>
+{% endif %}

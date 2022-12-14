@@ -1,0 +1,34 @@
+<!--let user add task-->
+{% extends 'task/main.html' %}
+
+{% block content %}
+<!-- #TODO: add calendar support for user to choose task deadline-->
+<div class="navbar">
+    <a href="{% url '' %}" style="color: #fff; text-decoration: none;">&#8592;Back</a>
+</div>
+
+<div class="formWrapper">
+  
+  <br />
+
+  <form class="form task-form" method="POST" action="">
+      {% csrf_token %}
+
+      {% for field in form %}
+          <div class="form__field">
+              <label>{{field.label}}</label>
+              {{field}}
+          </div>
+
+      {% endfor %}
+
+    
+    <input
+      class="btn"    
+      type="submit"
+      value="Add Task"
+    />
+  </form>
+</div>
+ 
+{% endblock content %}

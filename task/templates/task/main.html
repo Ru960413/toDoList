@@ -1,0 +1,44 @@
+<!--the base templates of all the html files-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>TO DO LIST</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="{% static 'main.css' %}"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=EB+Garamond:wght@500&display=swap" rel="stylesheet"/>
+    </head>
+    <!--create a navbar here -->
+    <body>
+        <main>
+            <div class="container">
+                {% include 'task/navbar.html' %}
+                
+                <!--TODO: add message display area DONE-->
+                <div class="message-wrapper">
+                    {% if messages %}
+                        <ul class="messages alert">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class=" {{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                            <button class="alert_close close-btn">x</button>
+                        </ul>
+                        
+                    {% endif %}
+                </div>
+                
+                {% block content %}
+
+
+                {% endblock content %}
+            </div>
+        
+        
+        </main>
+    </body>
+    <script src="{% static 'main.js' %}" async defer></script>
+</html>

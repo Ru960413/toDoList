@@ -1,0 +1,36 @@
+"""toDoList URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('task.urls')),
+    path('api/', include('api.urls')),
+    
+    # TODO: add password reset views and urls DONE
+    # user submit email for reset
+    path('reset_password/', auth_views.PasswordResetView.as_view(template_name="task/reset_password.html"), name="reset_password"),
+    # reset email sent
+    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="task/reset_password_sent.html"), name="password_reset_done"),
+    # user gets email with link and reset instructions
+    # uidb64: The user’s id encoded in base 64. token: Token to check that the password is valid.
+    path('rest/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="task/reset.html"), name="password_reset_confirm"),
+    # password has been reset successfully
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="task/reset_password_complete.html"), name="password_reset_complete"),
+]

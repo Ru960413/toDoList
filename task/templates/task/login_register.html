@@ -1,0 +1,89 @@
+<!--if already have an account log in, else register-->
+{% extends 'task/main.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if page == 'register' %}
+<div class="register-form-wrapper">
+  <div>
+    <div>
+      <h3>Register</h3>
+      <p>Create a new account</p>
+    </div>
+
+    <form method="POST" action="{% url 'register' %}">
+      {% csrf_token %} 
+      {% for field in form %}
+      <div>
+        <label>{{ field.label }} </label>
+        {{ field }}
+
+         {% if field.help_text %}
+          <small>{{ field.help_text }}</small>
+        {% endif %} 
+      </div>
+
+      {% endfor %}
+
+      
+      <div>
+        <input class="btn" type="submit" value="Register" class="register-btn"/>
+      </div>
+    </form>
+    <div>
+      <p>Already have an Account?</p>
+      <a href="{% url 'login' %}">Login</a>
+    </div>
+  </div>
+</div>
+
+<!--else if is on login page, render login form-->
+{% else %}
+
+<div class="login-form-wrapper">
+  <div>
+    <div>
+      <h3>Account Login</h3>
+      <p>Hello Beautiful people, Welcome Back!</p>
+    </div>
+
+    <!--Q: Why can a form without action work?-->
+    <!--Having an action of an empty string in most browsers points the form at the URL the browser currently has loaded, which is the script that served the form in the first place.
+    so it'll be the login url-->
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <div>
+        <label>Username: </label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter your username..."
+        />
+      </div>
+
+      <div>
+        <label>Password: </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="••••••••"
+        />
+      </div>
+      <div>
+        <input type="submit" value="Login" class="btn"/>
+        <a href="{% url 'reset_password' %}">Forget Password?</a>
+      </div>
+    </form>
+    <div>
+      <p>Don’t have an Account?</p>
+      <a href="{% url 'register' %}">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+{% endif %} 
+
+{% endblock content %}
+        
