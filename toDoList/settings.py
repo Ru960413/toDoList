@@ -190,5 +190,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # if live set the current work directory to app
-if os.getcwd() == '/app':
-    DEBUG=False
+# if os.getcwd() == '/app':
+    # DEBUG=False
