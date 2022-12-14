@@ -161,7 +161,7 @@ USE_TZ = True
 TIME_ZONE = 'Asia/Taipei'
 
 CSRF_TRUSTED_ORIGINS = [
-    'todolist-production-2fac.up.railway.app',
+    'https://todolist-production-2fac.up.railway.app',
 ]
 
 # allow Django to send email to user(using TLS port)
