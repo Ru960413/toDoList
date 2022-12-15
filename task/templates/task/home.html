@@ -38,7 +38,14 @@
                 
                 {% endif %}
                 <div class="list-row">({{ task.category }})</div>
-                <!--<div class="list-row update"><button><a href="{% url 'update-task' task.id %}">Edit</a></button></div>-->
+
+                <!--{% if task.deadline != None %}
+                <div class="list-row date">{{ task.deadline }}</div>
+                {% else %}
+
+                {% endif %}-->
+                
+                <!--<div class="list-row update"><button><a href="{% url 'view-task' task.id %}">View</a></button></div>-->
                 <div class="list-row delete"><a href="{% url 'delete-task' task.id %}">&#10006;</a></div>
             </div>
 

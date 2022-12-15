@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, widgets
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Task
@@ -22,3 +22,6 @@ class TaskForm(ModelForm):
     class Meta:
         model = Task
         fields = ['task_name', 'description', 'category', 'complete']
+        # widgets = {
+        #     'deadline': widgets.DateInput(format=('%Y/%m/%d'), attrs={'type':'date'})
+        # }

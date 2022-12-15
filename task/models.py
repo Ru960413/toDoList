@@ -17,7 +17,7 @@ class Task(models.Model):
     # auto_now_add: set the field to now when the object is first created
     creation = models.DateTimeField(auto_now_add=True)
     # allow task to have a blank deadline
-    deadline = models.DateTimeField(null=True, blank=True)
+    deadline = models.DateField(null=True, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     #add category DONE
@@ -27,7 +27,7 @@ class Task(models.Model):
         return self.task_name
     
     class Meta:
-        ordering = ['category', 'task_name']
+        ordering = ['category', 'task_name'] 
 
 
 
