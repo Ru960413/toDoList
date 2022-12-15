@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_z-&x!=2ca@n^u5c6@hblr_+y^a5q$mgvbi64_-%()cbh(dmsa'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -158,7 +158,6 @@ USE_I18N = True
 # use time zone support
 USE_TZ = True
 
-TIME_ZONE = 'Asia/Taipei'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://todolist-production-2fac.up.railway.app',
@@ -169,8 +168,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'huiru.test@gmail.com'
-EMAIL_HOST_PASSWORD= 'gjdoqizrzjptukwl'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD= os.environ.get('EMAIL_HOST_PASSWORD')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -193,5 +192,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # if live set the current work directory to app
-# if os.getcwd() == '/app':
-    # DEBUG=False
+if os.getcwd() == '/app':
+    DEBUG=False
