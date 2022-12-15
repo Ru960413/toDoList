@@ -21,7 +21,7 @@ class CustomUserCreationForm(UserCreationForm):
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['task_name', 'description', 'category', 'complete']
-        # widgets = {
-        #     'deadline': widgets.DateInput(format=('%Y/%m/%d'), attrs={'type':'date'})
-        # }
+        fields = ['task_name', 'description', 'category', 'complete', 'deadline']
+        widgets = {
+            'deadline': widgets.DateInput(format=('%Y/%m/%d'), attrs={'type':'date'})
+        }

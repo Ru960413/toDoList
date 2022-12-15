@@ -102,6 +102,11 @@ textarea
     color: navy !important;
 }
 
+.date
+{
+    color: rgb(225, 0, 0) !important;
+}
+
 .list-row a
 {
     text-decoration: none;

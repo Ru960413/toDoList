@@ -27,7 +27,7 @@ class Task(models.Model):
         return self.task_name
     
     class Meta:
-        ordering = ['category', 'task_name'] 
+        ordering = ['category', 'deadline', 'task_name'] 
 
 
 
