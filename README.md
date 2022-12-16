@@ -30,6 +30,8 @@
     - Django REST Framework(Serialization, Response, Request...)
     - How to build an API
     - How to interact with API through Postman
+    - How to deploy project to Railway
+    - setup environment variables
 
 ## Features
 
