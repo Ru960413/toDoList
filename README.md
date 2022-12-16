@@ -51,6 +51,12 @@
  3. Password Reset
   
 ## Installation
+ 
+  1. clone [repo](https://github.com/Ru960413/toDoList/).
+  2. create a virtual environment and activate it
+  3. cd into "toDoList" 
+  4. pip install -r requirements.txt
+  5. python manage.py runserver (or python3 manage.py runserver)
 
 ## The next version
 
