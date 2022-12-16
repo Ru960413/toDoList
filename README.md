@@ -9,7 +9,7 @@
 
  ![ToDoList Homepage](To%20Do%20List%20Homepage.png "Homepage after login")
 
-## Video Demo:  <URL HERE>(P.S. 剪輯影片，上傳YT後加入網址)
+## Video Demo:  <https://youtu.be/kOjpGpcRtk8>
 
 ## Introduction
 
