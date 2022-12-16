@@ -62,7 +62,7 @@
 
     - Add a table for every category created
     - Search for task feature
-    - create mobile app
+    - improve API
 
 ## 專案說明
 
