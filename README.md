@@ -37,10 +37,13 @@
 
  1. CRUD functionalities:
 
-    - Create Task
-    - Read Task
-    - Update Task
-    - Delete Task
+    - Create Task: click add task button on homepage to create a task
+    - Read Task: click on the task you want to view to get its deal
+    - Update Task: click on the task to update to edit it(with a update form), remember to click on "update task" at the bottom to save the change
+    - Delete Task: click on the red cross to delete test, you will be directed to another page to confirm your action
+ 
+    - P.S. when an action is successfull performed, the app will inform you with a message
+    - P.P.S. all the CRUD functionalities require you to create an account
 
  2. User Authentication:
 
@@ -48,7 +51,7 @@
     - Register
     - Logout
 
- 3. Password Reset
+ 3. Password Reset: once requested for an email reset, the app will send you a email to reset your password. 
   
 ## Installation
  
