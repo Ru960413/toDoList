@@ -23,7 +23,7 @@
 
  I found that I tend to have many tasks at hand, which I need a place for me to remember it, so that it won't take up too much of my mental space. Hence I created this app where I can just write down all my to-dos, and at thee same time learn more about Python and Django:)
 
-## Learning Points
+## What I learned while finishing this project
 
     - Python classes and inheritance
     - Django Framework
@@ -38,12 +38,12 @@
  1. CRUD functionalities:
 
     - Create Task: click add task button on homepage to create a task
-    - Read Task: click on the task you want to view to get its deal
-    - Update Task: click on the task to update to edit it(with a update form), remember to click on "update task" at the bottom to save the change
-    - Delete Task: click on the red cross to delete test, you will be directed to another page to confirm your action
+    - Read Task: click on the task you want to view to get its detail
+    - Update Task: click on the task to update it, remember to click on "update task" at the bottom to save the change!
+    - Delete Task: click on the red cross at the right-end of the task row to delete test, you will be directed to another page to confirm your action
  
     - P.S. when an action is successfull performed, the app will inform you with a message
-    - P.P.S. all the CRUD functionalities require you to create an account
+    - P.P.S. all the CRUD functionalities require you to create an account in order to use them
 
  2. User Authentication:
 
@@ -52,6 +52,7 @@
     - Logout
 
  3. Password Reset: once requested for an email reset, the app will send you a email to reset your password. 
+    - P.S. Make sure to enter the same email as you entered when registered for the account
   
 ## Installation
  
