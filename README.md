@@ -5,11 +5,20 @@
 
 ### 下面有簡短的中文說明，可直接至下方觀看喔~
 
-## Hompage
+## Homepage
 
  ![ToDoList Homepage](To%20Do%20List%20Homepage.png "Homepage after login")
 
 ## Video Demo:  <https://youtu.be/kOjpGpcRtk8>
+
+## Tech Used
+
+    - HTML
+    - CSS
+    - Python
+    - Django
+    - Railway
+    - SQLite
 
 ## Introduction
 
@@ -42,7 +51,7 @@
     - Update Task: click on the task to update it, remember to click on "update task" at the bottom to save the change!
     - Delete Task: click on the red cross at the right-end of the task row to delete test, you will be directed to another page to confirm your action
  
-    - P.S. when an action is successfull performed, the app will inform you with a message
+    - P.S. when an action is successfully performed, the app will inform you with a message
     - P.P.S. all the CRUD functionalities require you to create an account in order to use them
 
  2. User Authentication:
