@@ -59,7 +59,7 @@ def viewTask(request, pk):
 
 
 
-@api_view(['POST'])
+@api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateTask(request, pk):
     task = Task.objects.get(id=pk)
